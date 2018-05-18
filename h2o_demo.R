@@ -69,6 +69,9 @@ model_automl = h2o.automl(x = features,
 
 model_automl@leaderboard
 
+bestoffamily = h2o.getModel('StackedEnsemble_BestOfFamily_0_AutoML_20180518_095732')
+bestoffamily
+
 # Default GBM Model
 h2o.performance(model_gbm, newdata = h_test)
 # Best model from AutoML
@@ -89,3 +92,13 @@ explanations = lime::explain(x = d_samp,
                              n_permutations = 5000,
                              feature_select = "auto",
                              n_features = 13) # Look top x features
+
+
+lime::plot_features(explanations, ncol = 1)
+
+
+# Sort explanations by feature weight
+explanations = 
+  explanations[order(explanations$feature_weight, decreasing = TRUE),]
+# Print Table
+print(explanations)
