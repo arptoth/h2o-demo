@@ -2,15 +2,12 @@
 
 ## Introduction
 
-A brief introduction and summary of the module.
+This script is H2O test based in Jo-fai Chow workshop at ERum 2018 in Budapest. Event link is  [here](http://2018.erum.io/).
 
 ## Dependencies
 
 This module requires the following modules/libraries:
 
-* [Islandora](https://github.com/islandora/islandora)
-* [Tuque](https://github.com/islandora/tuque)
-* Any
-* Additional
-* Requirements
-* Test line
+- library(h2o) 
+- library(lime)
+- library(mlbench)
